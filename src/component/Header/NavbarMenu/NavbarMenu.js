@@ -28,12 +28,8 @@ const NavbarMenu = () => {
                     </Nav>
                     <Nav>
                         <CustomLink
-                            btnLink="/in"
-                            btnName="Sign In"
-                        ></CustomLink>
-                        <CustomLink
-                            btnLink="/out"
-                            btnName="Sign Out"
+                            btnLink="/logIn"
+                            btnName="Log In"
                         ></CustomLink>
                     </Nav>
                 </Navbar.Collapse>

@@ -9,6 +9,7 @@ import Inventory from "./component/page/Inventory/Inventory";
 import AddItem from "./component/page/AddItem/AddItem";
 import Footer from "./component/Footer/Footer";
 import Blogs from "./component/page/Blogs/Blogs";
+import LogIn from "./component/page/LogIn/LogIn";
 function App() {
     return (
         <div className="App">
@@ -22,6 +23,7 @@ function App() {
                 ></Route>
                 <Route path="/addItem" element={<AddItem></AddItem>}></Route>
                 <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+                <Route path="/logIn" element={<LogIn></LogIn>}></Route>
                 <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
