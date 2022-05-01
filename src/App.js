@@ -3,6 +3,7 @@ import "./App.css";
 import NavbarMenu from "./component/Header/NavbarMenu/NavbarMenu";
 import Home from "./component/page/Home/Home";
 
+import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NotFound from "./component/page/NotFound/NotFound";
 import Inventory from "./component/page/Inventory/Inventory";
@@ -13,6 +14,7 @@ import LogIn from "./component/page/LogIn/LogIn";
 import UpdateItem from "./component/page/UpdateItem/UpdateItem";
 import Order from "./component/page/Order/Order";
 import MyItem from "./component/page/MyItem/MyItem";
+
 function App() {
     return (
         <div className="App">

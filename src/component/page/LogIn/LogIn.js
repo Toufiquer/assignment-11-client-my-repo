@@ -3,13 +3,23 @@ import { Form, Button } from "react-bootstrap";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../othersFile/firebase.init";
+import { ToastContainer, toast } from "react-toastify";
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    sendEmailVerification,
+    sendPasswordResetEmail,
+} from "firebase/auth";
+import useFireBase from "../../othersFile/useFireBase";
 // false => Log in
 const LogIn = () => {
+    const { user } = useFireBase();
     const [isLogIn, SetIsLogIn] = useState(false);
     const [email, SetEmail] = useState("");
     const [password, SetPassword] = useState("");
     const [confirmPass, SetConfirmPass] = useState("");
     const [err, SetErr] = useState("");
+    const [toastText, SetToastText] = useState("");
 
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     const navigate = useNavigate();
@@ -35,8 +45,34 @@ const LogIn = () => {
         } else {
             SetErr("");
         }
-        const user = { email, password, confirmPass };
+        if (!isLogIn) {
+            signInWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    navigate(from, { replace: true });
+                })
+                .then(res => SetToastText(res))
+                .catch(err => console.error(err));
+            // SetToastText("You Sign In");
+        } else {
+            // const form = e.currentTarget;
+            // if (form.checkValidity() === false) {
+            //     e.stopPropagation();
+            //     return;
+            // }
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    navigate(from, { replace: true });
+                })
+                .catch(err => console.error(err));
+            console.log("on the way");
+        }
+        toastText && toast(toastText);
         console.log("working", user);
+    };
+    const emailVerification = () => {
+        sendEmailVerification(auth.currentUser).then(() => {
+            alert("Email was send");
+        });
     };
     const handleSingInGoogle = () => {
         signInWithGoogle()
@@ -44,6 +80,11 @@ const LogIn = () => {
                 navigate(from, { replace: true });
             })
             .catch(err => console.error(err));
+    };
+
+    let passReset = () => {
+        sendPasswordResetEmail(auth, email);
+        alert("Email was send");
     };
     return (
         <div className="container py-5">
@@ -78,6 +119,22 @@ const LogIn = () => {
                         required
                     />
                 </Form.Group>
+                {user?.uid && (
+                    <Form.Group>
+                        <Form.Text
+                            onClick={emailVerification}
+                            className="btn text-dark"
+                        >
+                            Email Verification
+                        </Form.Text>
+                        <Form.Text
+                            onClick={passReset}
+                            className="btn text-dark"
+                        >
+                            Password Reset
+                        </Form.Text>
+                    </Form.Group>
+                )}
                 {isLogIn && (
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
@@ -95,7 +152,7 @@ const LogIn = () => {
                     <Form.Check
                         onClick={signInOrLogIn}
                         type="checkbox"
-                        label="Already a member?"
+                        label="Want to join as a member"
                     />
                 </Form.Group>
                 <Button variant="primary" type="LogIn">
@@ -112,6 +169,7 @@ const LogIn = () => {
                     Continue With Google
                 </button>
             </div>
+            <ToastContainer />
         </div>
     );
 };
