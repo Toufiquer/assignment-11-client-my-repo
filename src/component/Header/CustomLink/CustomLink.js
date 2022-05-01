@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
-function CustomLink({ btnName, btnLink }) {
+function CustomLink({ btnName, btnLink, handleSignInOut }) {
     let resolved = useResolvedPath(btnLink);
     let match = useMatch({ path: resolved.pathname, end: true });
 
@@ -12,6 +12,7 @@ function CustomLink({ btnName, btnLink }) {
                 textDecoration: match ? "underline" : "none",
             }}
             to={btnLink}
+            onClick={handleSignInOut}
         >
             {btnName}
         </Link>

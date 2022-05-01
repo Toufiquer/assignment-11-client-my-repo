@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
+import auth from "../../othersFile/firebase.init";
 // false => Log in
 const LogIn = () => {
     const [isLogIn, SetIsLogIn] = useState(false);
@@ -7,6 +10,12 @@ const LogIn = () => {
     const [password, SetPassword] = useState("");
     const [confirmPass, SetConfirmPass] = useState("");
     const [err, SetErr] = useState("");
+
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
     const signInOrLogIn = e => {
         SetIsLogIn(!isLogIn);
     };
@@ -30,7 +39,11 @@ const LogIn = () => {
         console.log("working", user);
     };
     const handleSingInGoogle = () => {
-        console.log("google log in");
+        signInWithGoogle()
+            .then(() => {
+                navigate(from, { replace: true });
+            })
+            .catch(err => console.error(err));
     };
     return (
         <div className="container py-5">
@@ -38,12 +51,14 @@ const LogIn = () => {
                 {isLogIn ? "Sign Up" : "Log In"}
             </div>
             <Form
+                autoComplete="username"
                 onSubmit={handleSubmit}
                 className=" custom-form-container mx-auto"
             >
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
+                        autoComplete="email"
                         onBlur={emailSetUP}
                         type="email"
                         placeholder="Enter email"
@@ -56,6 +71,7 @@ const LogIn = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control
+                        autoComplete="current-password"
                         onBlur={passwordSetUP}
                         type="password"
                         placeholder="Password"
@@ -66,6 +82,7 @@ const LogIn = () => {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control
+                            autoComplete="current-password"
                             onBlur={confirmPasswordSetUP}
                             type="password"
                             placeholder="Confirm Password"
@@ -85,7 +102,7 @@ const LogIn = () => {
                     {isLogIn ? "Sign Up" : "Log In"}
                 </Button>
             </Form>
-            <div className="container w-50">
+            <div className="container-login">
                 <hr />
                 <button
                     onClick={handleSingInGoogle}

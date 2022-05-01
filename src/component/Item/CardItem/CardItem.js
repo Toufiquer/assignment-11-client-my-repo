@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CardItem = () => {
     return (
@@ -18,9 +19,18 @@ const CardItem = () => {
                 </Card.Text>
             </Card.Body>
             <Card.Footer className="d-flex w-100 justify-content-between">
-                <div className="btn btn-outline-primary">Order</div>
-                <div className="btn btn-outline-primary">Update</div>
-                <div className="btn btn-outline-primary">Delete</div>
+                <Link
+                    to="/inventory/order/1"
+                    className="btn btn-outline-primary"
+                >
+                    Order
+                </Link>
+                <Link
+                    to="/inventory/update/1"
+                    className="btn btn-outline-primary"
+                >
+                    Update
+                </Link>
             </Card.Footer>
         </Card>
     );

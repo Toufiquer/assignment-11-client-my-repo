@@ -31,8 +31,26 @@
     margin: 9px auto;
     padding: 9px;
 }
+
+/* Inventory */
+.inventory-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Log In Page */
+.container-login {
+    width: 600px;
+    margin: 9px auto;
+}
+/* Responsive */
 @media screen and (max-width: 959px) {
     .custom-form-container {
         width: 95%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .container-login {
+        width: 98%;
     }
 }

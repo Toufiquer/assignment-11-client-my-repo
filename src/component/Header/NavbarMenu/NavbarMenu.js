@@ -2,7 +2,9 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import CustomLink from "../CustomLink/CustomLink";
 
+import useFireBase from "../../othersFile/useFireBase";
 const NavbarMenu = () => {
+    const { user, handleSignOut } = useFireBase();
     return (
         <Navbar
             collapseOnSelect
@@ -27,10 +29,31 @@ const NavbarMenu = () => {
                         ></CustomLink>
                     </Nav>
                     <Nav>
-                        <CustomLink
-                            btnLink="/logIn"
-                            btnName="Log In"
-                        ></CustomLink>
+                        {user?.uid && (
+                            <CustomLink
+                                btnLink="/add"
+                                btnName="Add Item"
+                            ></CustomLink>
+                        )}
+                        {user?.uid && (
+                            <CustomLink
+                                btnLink="/myItem"
+                                btnName="My Item"
+                            ></CustomLink>
+                        )}
+
+                        {user?.uid ? (
+                            <CustomLink
+                                handleSignInOut={handleSignOut}
+                                btnLink="/login"
+                                btnName="Sign Out"
+                            ></CustomLink>
+                        ) : (
+                            <CustomLink
+                                btnLink="/login"
+                                btnName="Log In"
+                            ></CustomLink>
+                        )}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

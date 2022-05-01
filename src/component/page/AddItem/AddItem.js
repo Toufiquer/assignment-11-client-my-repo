@@ -7,6 +7,7 @@ const AddItem = () => {
     };
     return (
         <div className="container">
+            <div className="display-4 py-2">Add A New Item</div>
             <Form className=" custom-form-container mx-auto">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Name:</Form.Label>
