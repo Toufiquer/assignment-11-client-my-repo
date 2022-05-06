@@ -15,6 +15,7 @@ import UpdateItem from "./component/page/UpdateItem/UpdateItem";
 import Order from "./component/page/Order/Order";
 import MyItem from "./component/page/MyItem/MyItem";
 import RequireAuth from "./component/othersFile/RequireAuth";
+import { ToastContainer } from "react-toastify";
 
 function App() {
     return (
@@ -69,6 +70,7 @@ function App() {
                 <Route path="*" element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
+            <ToastContainer />
         </div>
     );
 }
