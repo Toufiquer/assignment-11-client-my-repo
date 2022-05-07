@@ -1,36 +1,63 @@
+import axios from "axios";
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
-const CardItem = () => {
+const CardItem = ({
+    product: {
+        _id,
+        name,
+        productName,
+        productImg,
+        productDescription,
+        productQuantity,
+        productPrice,
+    },
+    handleDelete,
+    isDel = false,
+}) => {
     return (
         <Card>
-            <Card.Img
-                variant="top"
-                src="https://media.istockphoto.com/photos/vegetables-and-fruit-with-heart-shape-as-concept-of-cardiovascular-picture-id1285827086?b=1&k=20&m=1285827086&s=170667a&w=0&h=e4riSWiqdS_Kz6ahp_QNF02N1sKD0FN6lFsNJzb98C8="
-            />
+            <Card.Img variant="top" src={productImg} />
             <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                    <strong className="d-block text-center">Stock: 45</strong>
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                <Card.Title>{productName}</Card.Title>
+                <Card.Text className="text-justify">
+                    {productDescription}
                 </Card.Text>
+                <div className="text-start">
+                    <strong className="d-block">
+                        Stock: {productQuantity}
+                    </strong>
+                    <strong className="d-block">Price: {productPrice}</strong>
+                    <strong className="d-block">Supplier: {name}</strong>
+                </div>
             </Card.Body>
             <Card.Footer className="d-flex w-100 justify-content-between">
-                <Link
-                    to="/inventory/order/1"
-                    className="btn btn-outline-primary"
-                >
-                    Order
-                </Link>
-                <Link
-                    to="/inventory/update/1"
-                    className="btn btn-outline-primary"
-                >
-                    Update
-                </Link>
+                {!isDel && (
+                    <Link
+                        to="/inventory/order/1"
+                        className="btn btn-outline-primary"
+                    >
+                        Order
+                    </Link>
+                )}
+                {isDel && (
+                    <Link
+                        to="/inventory/update/1"
+                        className="btn btn-outline-primary"
+                    >
+                        Update
+                    </Link>
+                )}
+                {isDel && (
+                    <button
+                        onClick={() => handleDelete(_id)}
+                        className="btn btn-outline-danger mx-4"
+                    >
+                        Delete
+                    </button>
+                )}
             </Card.Footer>
         </Card>
     );

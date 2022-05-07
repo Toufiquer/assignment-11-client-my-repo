@@ -36,6 +36,7 @@
 .inventory-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 9px;
 }
 
 /* Log In Page */
@@ -48,9 +49,15 @@
     .custom-form-container {
         width: 95%;
     }
+    .inventory-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media screen and (max-width: 600px) {
     .container-login {
         width: 98%;
+    }
+    .inventory-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
