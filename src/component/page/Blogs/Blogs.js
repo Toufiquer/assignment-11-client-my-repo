@@ -5,9 +5,9 @@ const Blogs = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <div className="display-4 py-3">
+                    <h2 className="text-decoration-underline pt-5 pb-2">
                         Q1.Difference between Javascript and NodeJS
-                    </div>
+                    </h2>
                     <table className="table table-striped table-dark table-bordered table-bordered">
                         <thead>
                             <tr>
@@ -101,11 +101,10 @@ const Blogs = () => {
                     </table>
                 </div>
                 <div className="col-12">
-                    <div className="display-4 py-4">
+                    <h2 className="text-decoration-underline pt-5 pb-2">
                         Q2.When should you use nodejs and when should you use
                         mongodb.
-                    </div>
-
+                    </h2>
                     <table className="table table-striped table-dark table-bordered">
                         <thead>
                             <tr>
@@ -182,9 +181,9 @@ const Blogs = () => {
                     </table>
                 </div>
                 <div className="col-12">
-                    <div className="display-4 py-4">
+                    <h2 className="text-decoration-underline pt-5 pb-2">
                         Q3.Differences between SQL and NoSQL databases.
-                    </div>
+                    </h2>
                     <table className="table table-striped table-dark table-bordered">
                         <thead>
                             <tr>
@@ -227,9 +226,9 @@ const Blogs = () => {
                     </table>
                 </div>
                 <div className="col-12">
-                    <div className="display-4 py-4">
+                    <h2 className="text-decoration-underline pt-5 pb-2">
                         Q4.What is the purpose of jwt and how does it work
-                    </div>
+                    </h2>
                     <table className="table table-striped table-dark table-bordered">
                         <thead>
                             <tr>
