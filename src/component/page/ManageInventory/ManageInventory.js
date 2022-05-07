@@ -5,7 +5,8 @@ import { toast } from "react-toastify";
 import CardItem from "../../Item/CardItem/CardItem";
 import useProducts from "../../othersFile/useProducts";
 const ManageInventory = () => {
-    const [products] = useProducts();
+    const { products, SetProducts } = useProducts();
+    // Delete One Product
     const handleDelete = id => {
         const isPermission = window.confirm(
             "Are you sure? It it delete permanently."
@@ -14,7 +15,12 @@ const ManageInventory = () => {
             const url = `http://localhost:3500/products/${id}`;
             axios.delete(url).then(function (response) {
                 toast("Successfully deleted.");
-                console.log(response);
+
+                const remaining = products.filter(
+                    product => product._id !== id
+                );
+                SetProducts(remaining);
+                console.log(remaining, response);
             });
         }
     };
@@ -26,8 +32,8 @@ const ManageInventory = () => {
                         <CardItem
                             key={product?._id}
                             product={product}
-                            handleDelete={(true, handleDelete)}
                             isDel={"true"}
+                            handleDelete={handleDelete}
                         ></CardItem>
                     ))}
                 </div>

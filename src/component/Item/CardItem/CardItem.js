@@ -3,6 +3,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import useProducts from "../../othersFile/useProducts";
 
 const CardItem = ({
     product: {
@@ -14,8 +15,10 @@ const CardItem = ({
         productQuantity,
         productPrice,
     },
-    handleDelete,
     isDel = false,
+    isDelivered = false,
+    handleDelete,
+    handleDelivered,
 }) => {
     return (
         <Card>
@@ -56,6 +59,14 @@ const CardItem = ({
                         className="btn btn-outline-danger mx-4"
                     >
                         Delete
+                    </button>
+                )}
+                {isDelivered && (
+                    <button
+                        onClick={() => handleDelivered(_id)}
+                        className="btn btn-outline-success mx-4"
+                    >
+                        Delivered
                     </button>
                 )}
             </Card.Footer>

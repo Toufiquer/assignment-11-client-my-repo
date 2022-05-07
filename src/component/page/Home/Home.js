@@ -4,9 +4,15 @@ import Slider from "../../Item/Slider/Slider";
 import { Link } from "react-router-dom";
 import useProducts from "../../othersFile/useProducts";
 const Home = () => {
-    const [products] = useProducts();
+    const { products, SetProducts } = useProducts();
     let newProducts = [...products];
     newProducts.length = 6;
+    // Delete 1 Quantity || Update product
+    const handleDelivered = id => {
+        console.log("delivered", id);
+        const remaining = products.filter(product => product._id !== id);
+        SetProducts(remaining);
+    };
     return (
         <div>
             <Slider></Slider>
@@ -18,6 +24,8 @@ const Home = () => {
                         <CardItem
                             key={product?._id}
                             product={product}
+                            isDelivered={"true"}
+                        handleDelivered={handleDelivered}
                         ></CardItem>
                     ))}
                 </div>
