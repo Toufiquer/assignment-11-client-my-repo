@@ -3,7 +3,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import useProducts from "../../othersFile/useProducts";
+import useProducts from "../../hooks/useProducts";
 
 const CardItem = ({
     product: {
@@ -39,7 +39,7 @@ const CardItem = ({
             <Card.Footer className="d-flex w-100 justify-content-between">
                 {!isDel && (
                     <Link
-                        to="/inventory/order/1"
+                        to={`/inventory/update/${_id}`}
                         className="btn btn-outline-primary"
                     >
                         Order
@@ -47,7 +47,7 @@ const CardItem = ({
                 )}
                 {isDel && (
                     <Link
-                        to="/inventory/update/1"
+                        to={`/inventory/update/${_id}`}
                         className="btn btn-outline-primary"
                     >
                         Update

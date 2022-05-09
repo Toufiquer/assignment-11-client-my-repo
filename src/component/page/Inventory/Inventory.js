@@ -1,14 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CardItem from "../../Item/CardItem/CardItem";
-import useProducts from "../../othersFile/useProducts";
+import useProducts from "../../hooks/useProducts";
+import axios from "axios";
 const Inventory = () => {
     const { products, SetProducts } = useProducts();
     // Delete 1 Quantity || Update product
     const handleDelivered = id => {
         console.log("delivered", id);
-        const remaining = products.filter(product => product._id !== id);
-        SetProducts(remaining);
+        const url = `http://localhost:3500/product/${id}`
+        // axios.(url).then(function (response) {})
+        // const remaining = products.filter(product => product._id !== id);
+        // SetProducts(remaining);
     };
     return (
         <div className="container py-3 ">
@@ -39,5 +42,6 @@ const Inventory = () => {
         </div>
     );
 };
+
 
 export default Inventory;

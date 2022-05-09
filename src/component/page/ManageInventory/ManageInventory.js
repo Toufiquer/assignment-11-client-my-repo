@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import CardItem from "../../Item/CardItem/CardItem";
-import useProducts from "../../othersFile/useProducts";
+import useProducts from "../../hooks/useProducts";
 const ManageInventory = () => {
     const { products, SetProducts } = useProducts();
     // Delete One Product

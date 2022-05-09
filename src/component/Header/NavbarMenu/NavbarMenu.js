@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import CustomLink from "../CustomLink/CustomLink";
 
-import useFireBase from "../../othersFile/useFireBase";
+import useFireBase from "../../hooks/useFireBase";
 const NavbarMenu = () => {
     const { user, handleSignOut } = useFireBase();
     return (

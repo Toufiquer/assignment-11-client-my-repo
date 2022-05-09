@@ -5,7 +5,8 @@ import {
     signInWithPopup,
     signOut,
 } from "firebase/auth";
-import auth from "./firebase.init";
+import auth from "../othersFile/firebase.init";
+// import auth from "./firebase.init";
 
 const provider = new GoogleAuthProvider();
 const useFireBase = () => {

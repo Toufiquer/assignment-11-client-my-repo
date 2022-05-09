@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router";
-import useFireBase from "./useFireBase";
+import useFireBase from "../hooks/useFireBase";
 const RequireAuth = ({ children }) => {
     const { user } = useFireBase();
     const location = useLocation();

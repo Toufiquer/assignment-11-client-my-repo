@@ -10,7 +10,7 @@ import {
     sendEmailVerification,
     sendPasswordResetEmail,
 } from "firebase/auth";
-import useFireBase from "../../othersFile/useFireBase";
+import useFireBase from "../../hooks/useFireBase";
 // false => Log in
 const LogIn = () => {
     const { user } = useFireBase();

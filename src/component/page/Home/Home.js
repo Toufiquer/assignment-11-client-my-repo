@@ -2,16 +2,17 @@ import React from "react";
 import CardItem from "../../Item/CardItem/CardItem";
 import Slider from "../../Item/Slider/Slider";
 import { Link } from "react-router-dom";
-import useProducts from "../../othersFile/useProducts";
+import useProducts from "../../hooks/useProducts";
 const Home = () => {
     const { products, SetProducts } = useProducts();
     let newProducts = [...products];
     newProducts.length = 6;
     // Delete 1 Quantity || Update product
     const handleDelivered = id => {
-        console.log("delivered", id);
-        const remaining = products.filter(product => product._id !== id);
-        SetProducts(remaining);
+        console.log("delivered", id); 
+        
+        // const remaining = products.filter(product => product._id !== id);
+        // SetProducts(remaining);
     };
     return (
         <div>
@@ -25,7 +26,7 @@ const Home = () => {
                             key={product?._id}
                             product={product}
                             isDelivered={"true"}
-                        handleDelivered={handleDelivered}
+                            handleDelivered={handleDelivered}
                         ></CardItem>
                     ))}
                 </div>
