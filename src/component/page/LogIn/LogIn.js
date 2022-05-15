@@ -50,10 +50,13 @@ const LogIn = () => {
             await signInWithEmailAndPassword(auth, email, password)
                 .then(() => {})
                 .then(res => SetToastText(res))
-                .catch(err => console.error(err));
+                .catch(err => {
+                    console.error(err);
+                    toast("Wrong Password");
+                });
             const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
             const { data } = await axios.post(url);
-            localStorage.setItem("accessToken", data?.accessToken);
+            localStorage.setItem("accessToken", data.accessToken);
             navigate(from, { replace: true });
             // SetToastText("You Sign In");
         } else {
@@ -66,10 +69,13 @@ const LogIn = () => {
                 .then(async () => {
                     const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
                     const { data } = await axios.post(url);
-                    localStorage.setItem("accessToken", data?.accessToken);
+                    localStorage.setItem("accessToken", data.accessToken);
                     navigate(from, { replace: true });
                 })
-                .catch(err => console.error(err));
+                .catch(err => {
+                    console.log(err);
+                    toast("Email already in use.");
+                });
         }
 
         toastText && toast(toastText);
@@ -84,7 +90,7 @@ const LogIn = () => {
             .then(async () => {
                 const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
                 const { data } = await axios.post(url);
-                localStorage.setItem("accessToken", data?.accessToken);
+                localStorage.setItem("accessToken", data.accessToken);
                 navigate(from, { replace: true });
             })
             .catch(err => console.error(err));
@@ -127,22 +133,18 @@ const LogIn = () => {
                         required
                     />
                 </Form.Group>
-                {user?.uid && (
-                    <Form.Group>
-                        <Form.Text
-                            onClick={emailVerification}
-                            className="btn text-dark"
-                        >
-                            Email Verification
-                        </Form.Text>
-                        <Form.Text
-                            onClick={passReset}
-                            className="btn text-dark"
-                        >
-                            Password Reset
-                        </Form.Text>
-                    </Form.Group>
-                )}
+                <Form.Group>
+                    <Form.Text
+                        onClick={emailVerification}
+                        className="btn text-dark"
+                    >
+                        Email Verification
+                    </Form.Text>
+                    <Form.Text onClick={passReset} className="btn text-dark">
+                        Password Reset
+                    </Form.Text>
+                </Form.Group>
+
                 {isLogIn && (
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Confirm Password</Form.Label>

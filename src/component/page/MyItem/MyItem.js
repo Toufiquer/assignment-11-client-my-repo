@@ -10,7 +10,7 @@ import auth from "../../othersFile/firebase.init";
 const MyItem = () => {
     const { user } = useFireBase();
     const navigate = useNavigate();
-    const email = user.email;
+    const email = user?.email;
     console.log(user, email);
     const [products, SetProducts] = useState([]);
     useEffect(() => {
@@ -38,8 +38,8 @@ const MyItem = () => {
                 }
             }
         };
-        user && fetchRun();
-    }, [user, email, navigate]);
+        fetchRun();
+    }, [email, user, navigate]);
     return (
         <div className="container py-5">
             <div className="inventory-container">
