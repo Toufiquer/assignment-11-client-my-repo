@@ -12,6 +12,7 @@ const Inventory = () => {
                 {products.map(product => (
                     <CardItem key={product?._id} product={product}></CardItem>
                 ))}
+                {products.length === 0 && <h2>Nothing was found.</h2>}
             </div>
             <div className="row py-5">
                 <div className="col-12">
