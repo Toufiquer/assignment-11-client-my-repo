@@ -6,23 +6,11 @@ import axios from "axios";
 const Inventory = () => {
     const { products, SetProducts } = useProducts();
     // Delete 1 Quantity || Update product
-    const handleDelivered = id => {
-        console.log("delivered", id);
-        const url = `http://localhost:3500/product/${id}`
-        // axios.(url).then(function (response) {})
-        // const remaining = products.filter(product => product._id !== id);
-        // SetProducts(remaining);
-    };
     return (
         <div className="container py-3 ">
             <div className="inventory-container">
                 {products.map(product => (
-                    <CardItem
-                        key={product?._id}
-                        product={product}
-                        isDelivered={"true"}
-                        handleDelivered={handleDelivered}
-                    ></CardItem>
+                    <CardItem key={product?._id} product={product}></CardItem>
                 ))}
             </div>
             <div className="row py-5">
@@ -42,6 +30,5 @@ const Inventory = () => {
         </div>
     );
 };
-
 
 export default Inventory;

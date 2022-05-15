@@ -12,7 +12,7 @@ const ManageInventory = () => {
             "Are you sure? It it delete permanently."
         );
         if (isPermission) {
-            const url = `http://localhost:3500/products/${id}`;
+            const url = `https://mysterious-plateau-19048.herokuapp.com/products/${id}`;
             axios.delete(url).then(function (response) {
                 toast("Successfully deleted.");
 

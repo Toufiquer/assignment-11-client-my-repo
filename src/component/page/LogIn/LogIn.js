@@ -11,6 +11,7 @@ import {
     sendPasswordResetEmail,
 } from "firebase/auth";
 import useFireBase from "../../hooks/useFireBase";
+import axios from "axios";
 // false => Log in
 const LogIn = () => {
     const { user } = useFireBase();
@@ -38,7 +39,7 @@ const LogIn = () => {
     const confirmPasswordSetUP = e => {
         SetConfirmPass(e.target.value);
     };
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
         if (password !== confirmPass) {
             SetErr("Password are not matched");
@@ -46,12 +47,14 @@ const LogIn = () => {
             SetErr("");
         }
         if (!isLogIn) {
-            signInWithEmailAndPassword(auth, email, password)
-                .then(() => {
-                    navigate(from, { replace: true });
-                })
+            await signInWithEmailAndPassword(auth, email, password)
+                .then(() => {})
                 .then(res => SetToastText(res))
                 .catch(err => console.error(err));
+            const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
+            const { data } = await axios.post(url);
+            localStorage.setItem("accessToken", data?.accessToken);
+            navigate(from, { replace: true });
             // SetToastText("You Sign In");
         } else {
             // const form = e.currentTarget;
@@ -59,15 +62,17 @@ const LogIn = () => {
             //     e.stopPropagation();
             //     return;
             // }
-            createUserWithEmailAndPassword(auth, email, password)
-                .then(() => {
+            await createUserWithEmailAndPassword(auth, email, password)
+                .then(async () => {
+                    const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
+                    const { data } = await axios.post(url);
+                    localStorage.setItem("accessToken", data?.accessToken);
                     navigate(from, { replace: true });
                 })
                 .catch(err => console.error(err));
-            console.log("on the way");
         }
+
         toastText && toast(toastText);
-        console.log("working", user);
     };
     const emailVerification = () => {
         sendEmailVerification(auth.currentUser).then(() => {
@@ -76,7 +81,10 @@ const LogIn = () => {
     };
     const handleSingInGoogle = () => {
         signInWithGoogle()
-            .then(() => {
+            .then(async () => {
+                const url = `https://mysterious-plateau-19048.herokuapp.com/login?email=${email}`;
+                const { data } = await axios.post(url);
+                localStorage.setItem("accessToken", data?.accessToken);
                 navigate(from, { replace: true });
             })
             .catch(err => console.error(err));

@@ -23,6 +23,10 @@
     padding: 48px 0;
 }
 
+/* Owl carousal */
+.owl-nav {
+    font-size: 61px;
+}
 /* Custom form | Add Item */
 .custom-form-container {
     width: 700px;

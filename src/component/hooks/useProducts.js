@@ -7,7 +7,7 @@ const useProducts = () => {
 
     // fetch all products || Get All products
     useEffect(() => {
-        const url = `http://localhost:3500/products`;
+        const url = `https://mysterious-plateau-19048.herokuapp.com/products`;
         axios.get(url).then(function (response) {
             SetProducts(response?.data);
         });

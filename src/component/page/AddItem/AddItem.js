@@ -36,7 +36,7 @@ const AddItem = () => {
             productQuantity,
             productPrice,
         };
-        const url = `http://localhost:3500/addProduct`;
+        const url = `https://mysterious-plateau-19048.herokuapp.com/addProduct`;
         axios
             .post(url, { userData })
             .then(function (response) {

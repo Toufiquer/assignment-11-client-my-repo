@@ -17,7 +17,7 @@ import MyItem from "./component/page/MyItem/MyItem";
 import RequireAuth from "./component/othersFile/RequireAuth";
 import { ToastContainer } from "react-toastify";
 import ManageInventory from "./component/page/ManageInventory/ManageInventory";
-
+import UpdateQuantity from "./component/page/UpdateQuantity/UpdateQuantity";
 function App() {
     return (
         <div className="App">
@@ -59,18 +59,18 @@ function App() {
                     }
                 ></Route>
                 <Route
-                    path="/inventory/order/:id"
-                    element={
-                        <RequireAuth>
-                            <Order></Order>
-                        </RequireAuth>
-                    }
-                ></Route>
-                <Route
                     path="/inventory/update/:id"
                     element={
                         <RequireAuth>
                             <UpdateItem></UpdateItem>
+                        </RequireAuth>
+                    }
+                ></Route>
+                <Route
+                    path="/inventory/:id"
+                    element={
+                        <RequireAuth>
+                            <UpdateQuantity></UpdateQuantity>
                         </RequireAuth>
                     }
                 ></Route>

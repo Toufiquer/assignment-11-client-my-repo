@@ -39,10 +39,10 @@ const CardItem = ({
             <Card.Footer className="d-flex w-100 justify-content-between">
                 {!isDel && (
                     <Link
-                        to={`/inventory/update/${_id}`}
+                        to={`/inventory/${_id}`}
                         className="btn btn-outline-primary"
                     >
-                        Order
+                        Update
                     </Link>
                 )}
                 {isDel && (

@@ -20,7 +20,7 @@ const UpdateItem = () => {
     useEffect(() => {
         SetEmail(user?.email);
         SetName(user?.name);
-        const url = `http://localhost:3500/products/${id}`;
+        const url = `https://mysterious-plateau-19048.herokuapp.com/products/${id}`;
         axios.get(url).then(function (response) {
             // console.log(response);
             const {
@@ -59,7 +59,7 @@ const UpdateItem = () => {
             productPrice,
         };
         console.log(userData);
-        const url = `http://localhost:3500/products/${id}`;
+        const url = `https://mysterious-plateau-19048.herokuapp.com/products/${id}`;
         // Send data to node server
         fetch(url, {
             method: "PUT",
