@@ -6,7 +6,7 @@ import useProducts from "../../hooks/useProducts";
 import LatestOrder from "../../othersFile/LatestOrder";
 import Review from "../../othersFile/Review";
 const Home = () => {
-    const { products, SetProducts } = useProducts();
+    const { products } = useProducts();
     let newProducts = [...products];
     newProducts.length = 6;
     // Delete 1 Quantity || Update product
@@ -21,8 +21,6 @@ const Home = () => {
                         <CardItem
                             key={product?._id}
                             product={product}
-                            // isDelivered={"true"}
-                            // handleDelivered={handleDelivered}
                         ></CardItem>
                     ))}
                 </div>

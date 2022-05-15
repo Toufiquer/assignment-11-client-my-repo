@@ -10,81 +10,85 @@ const LatestOrder = () => {
                     <Card>
                         <Card.Img
                             variant="top"
-                            src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+                            src="https://cdn.britannica.com/06/75906-050-16A53398/mango-fruits.jpg"
                         />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Fresh Mango</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
+                                mango, (Mangifera indica), member of the cashew
+                                family (Anacardiaceae) and one of the most
+                                important and widely cultivated fruits of the
+                                tropical world. The mango tree is considered
+                                indigenous to southern Asia, especially Myanmar
+                                and Assam state of India, and numerous cultivars
+                                have been developed. Mangoes are a rich source
+                                of vitamins A, C, and D.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Cras justo odio</ListGroupItem>
                             <ListGroupItem>
-                                Dapibus ac facilisis in
+                                Orders by: Toufiquer Rahman
                             </ListGroupItem>
-                            <ListGroupItem>Vestibulum at eros</ListGroupItem>
                         </ListGroup>
-                        <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
                     </Card>
                 </div>
                 <div className="col-12 col-md-4 mx-auto">
                     <Card>
                         <Card.Img
                             variant="top"
-                            src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+                            src="https://cdn.britannica.com/69/137369-050-F1D9393A/Cranberries.jpg"
                         />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Fresh berry</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
+                                berry, in botany, a simple fleshy fruit that
+                                usually has many seeds, such as the banana,
+                                grape, and tomato. As a simple fruit, a berry is
+                                derived from a single ovary of an individual
+                                flower. The middle and inner layers of the fruit
+                                wall often are not distinct from each other.
+                                Together with drupes and pomes, berries are one
+                                of the main types of fleshy fruits.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Cras justo odio</ListGroupItem>
                             <ListGroupItem>
-                                Dapibus ac facilisis in
+                                Orders by: Toufiquer Rahman
                             </ListGroupItem>
-                            <ListGroupItem>Vestibulum at eros</ListGroupItem>
                         </ListGroup>
-                        <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
                     </Card>
                 </div>
                 <div className="col-12 col-md-4 mx-auto">
                     <Card>
                         <Card.Img
                             variant="top"
-                            src="https://images.unsplash.com/photo-1574856344991-aaa31b6f4ce3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+                            src="https://cdn.britannica.com/31/157531-050-25D8087E/Papaya-fruit.jpg"
                         />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Fresh papaya</Card.Title>
                             <Card.Text>
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
+                                papaya, (Carica papaya), also called papaw or
+                                pawpaw, succulent fruit of a large plant of the
+                                family Caricaceae. Though its origin is rather
+                                obscure, the papaya may represent the fusion of
+                                two or more species of Carica native to Mexico
+                                and Central America. Today it is cultivated
+                                throughout the tropical world and into the
+                                warmest parts of the subtropics. The papaya
+                                fruit is slightly sweet, with an agreeable musky
+                                tang, which is more pronounced in some varieties
+                                and in some climates than in others. It is a
+                                popular breakfast fruit in many countries and is
+                                also used in salads, pies, sherbets, juices, and
+                                confections. The unripe fruit can be cooked like
+                                squash.
                             </Card.Text>
                         </Card.Body>
                         <ListGroup className="list-group-flush">
-                            <ListGroupItem>Cras justo odio</ListGroupItem>
                             <ListGroupItem>
-                                Dapibus ac facilisis in
+                                Orders by: Toufiquer Rahman
                             </ListGroupItem>
-                            <ListGroupItem>Vestibulum at eros</ListGroupItem>
                         </ListGroup>
-                        <Card.Body>
-                            <Card.Link href="#">Card Link</Card.Link>
-                            <Card.Link href="#">Another Link</Card.Link>
-                        </Card.Body>
                     </Card>
                 </div>
             </div>

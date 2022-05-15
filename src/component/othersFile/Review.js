@@ -2,7 +2,7 @@ import React from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const Review = () => {
     return (
@@ -26,18 +26,13 @@ const Review = () => {
                                 <Card.Img
                                     className="rounded"
                                     variant="top"
-                                    src="https://img.freepik.com/free-vector/shining-circle-purple-lighting-isolated-dark-background_1441-2396.jpg?t=st=1652159389~exp=1652159989~hmac=b87cf65b41d9fd5b3c06a6067f1fb698311f7e3a6904a2a1d9a6f965f9cd1f33&w=740"
+                                    src="https://storage.googleapis.com/rytr-me/public/image/testimonials/meri.jpg"
                                 />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
+                                    <Card.Title>Meri Pipenbaher</Card.Title>
                                     <Card.Text>
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
+                                        "This fruits is amazing."
                                     </Card.Text>
-                                    <Button variant="primary">
-                                        Go somewhere
-                                    </Button>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -46,18 +41,11 @@ const Review = () => {
                                 <Card.Img
                                     className="rounded"
                                     variant="top"
-                                    src="https://img.freepik.com/free-vector/shining-circle-purple-lighting-isolated-dark-background_1441-2396.jpg?t=st=1652159389~exp=1652159989~hmac=b87cf65b41d9fd5b3c06a6067f1fb698311f7e3a6904a2a1d9a6f965f9cd1f33&w=740"
+                                    src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160601200/57881726-vector-female-face-avatar-template-pictogram-button-round-trendy-flat-icon-with-women-for-business-i.jpg?fj=1"
                                 />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">
-                                        Go somewhere
-                                    </Button>
+                                    <Card.Title>Alex</Card.Title>
+                                    <Card.Text>looks good.</Card.Text>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -66,18 +54,11 @@ const Review = () => {
                                 <Card.Img
                                     className="rounded"
                                     variant="top"
-                                    src="https://img.freepik.com/free-vector/shining-circle-purple-lighting-isolated-dark-background_1441-2396.jpg?t=st=1652159389~exp=1652159989~hmac=b87cf65b41d9fd5b3c06a6067f1fb698311f7e3a6904a2a1d9a6f965f9cd1f33&w=740"
+                                    src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160600070/57844967-vector-visage-f%C3%A9minin-avatar-mod%C3%A8le-pictogramme-bouton-ic%C3%B4ne-plat-rond-%C3%A0-la-mode-avec-des-femmes-d-a.jpg?fj=1"
                                 />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">
-                                        Go somewhere
-                                    </Button>
+                                    <Card.Title>Jacks</Card.Title>
+                                    <Card.Text>Quick and fast</Card.Text>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -86,18 +67,11 @@ const Review = () => {
                                 <Card.Img
                                     className="rounded"
                                     variant="top"
-                                    src="https://img.freepik.com/free-vector/shining-circle-purple-lighting-isolated-dark-background_1441-2396.jpg?t=st=1652159389~exp=1652159989~hmac=b87cf65b41d9fd5b3c06a6067f1fb698311f7e3a6904a2a1d9a6f965f9cd1f33&w=740"
+                                    src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160601046/57880420-vector-female-face-avatar-template-pictogram-button-round-trendy-flat-icon-with-women-for-business-i.jpg?fj=1"
                                 />
                                 <Card.Body>
-                                    <Card.Title>Card Title</Card.Title>
-                                    <Card.Text>
-                                        Some quick example text to build on the
-                                        card title and make up the bulk of the
-                                        card's content.
-                                    </Card.Text>
-                                    <Button variant="primary">
-                                        Go somewhere
-                                    </Button>
+                                    <Card.Title>Rina</Card.Title>
+                                    <Card.Text>awesome</Card.Text>
                                 </Card.Body>
                             </Card>
                         </div>
