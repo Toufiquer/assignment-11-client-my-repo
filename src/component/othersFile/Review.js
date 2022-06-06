@@ -24,7 +24,7 @@ const Review = () => {
                         <div className="item">
                             <Card>
                                 <Card.Img
-                                    className="rounded"
+                                    className=""
                                     variant="top"
                                     src="https://storage.googleapis.com/rytr-me/public/image/testimonials/meri.jpg"
                                 />
@@ -39,7 +39,7 @@ const Review = () => {
                         <div className="item">
                             <Card>
                                 <Card.Img
-                                    className="rounded"
+                                    className=""
                                     variant="top"
                                     src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160601200/57881726-vector-female-face-avatar-template-pictogram-button-round-trendy-flat-icon-with-women-for-business-i.jpg?fj=1"
                                 />
@@ -52,7 +52,7 @@ const Review = () => {
                         <div className="item">
                             <Card>
                                 <Card.Img
-                                    className="rounded"
+                                    className=""
                                     variant="top"
                                     src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160600070/57844967-vector-visage-f%C3%A9minin-avatar-mod%C3%A8le-pictogramme-bouton-ic%C3%B4ne-plat-rond-%C3%A0-la-mode-avec-des-femmes-d-a.jpg?fj=1"
                                 />
@@ -65,7 +65,7 @@ const Review = () => {
                         <div className="item">
                             <Card>
                                 <Card.Img
-                                    className="rounded"
+                                    className=""
                                     variant="top"
                                     src="https://previews.123rf.com/images/artemstepanov/artemstepanov1606/artemstepanov160601046/57880420-vector-female-face-avatar-template-pictogram-button-round-trendy-flat-icon-with-women-for-business-i.jpg?fj=1"
                                 />
